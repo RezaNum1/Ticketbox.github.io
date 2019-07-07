@@ -4,7 +4,7 @@
         <div class="logo">
             <a href="#">
                 <div class="d-flex flex-row align-items-center justify-content-start" style="margin-top: 35px;">
-                    <div><img src="{{asset('assets/images/bed.png')}}" alt=""></div>
+                    <div><img src="{{asset('assets/images/ticket.png')}}" alt=""></div>
                     <div><label style="color: tomato; font-size: 45px; font-weight: bold">Ticket-</label><label style="font-size: 45px; font-weight: bold">Box</label></div>
                     <div></div>
                 </div>
@@ -19,6 +19,7 @@
                 <li><a href="{{route('owners.create')}}">Create</a></li>
                 <li><a href="{{route('owners.bookingList')}}">Booking List</a></li>
                 <li><a href="{{route('owners.bookingCode')}}">Booking Code</a></li>
+                <li><a href="{{route('owners.charts')}}">Charts</a></li>
                 <li><a href="{{route('auth.logout')}}">LogOut</a></li>
             </ul>
         </nav>
@@ -30,7 +31,7 @@
             <!-- Phone -->
             <div class="header_phone d-flex flex-row align-items-center justify-content-start">
                 <div><div><img src="{{asset('assets/images/phone.svg')}}" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                <div>+1 912-252-7350</div>
+                <div>Contac Us</div>
             </div>
         </div>
     </div>

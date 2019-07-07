@@ -1,59 +1,29 @@
 @extends('backend.base_takers')
 @section('content')
-    <div class="home" style="height: auto;">
-        <!-- Home Slider -->
-        <div class="home_slider_container">
-            <div class="bd-example">
-                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="http://blog.tiket.com/wp-content/uploads/2016/02/socmed-banner_1200x628px.jpg" class="d-block w-100" style="height: 750px;">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="http://blog.tiket.com/wp-content/uploads/2016/04/promo-all-hotel-apps_Sosial-media-banner-1200x628-min.png" style="height: 750px;" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://wallpaperaccess.com/full/119615.jpg" class="d-block w-100" style="height: 750px;" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                            </div>
-                        </div>
+    <div class="row" id="box-search" style="height:700px;">
+        <div class="thumbnail text-center">
+            {{--        <img src="{{asset('assets/images/bg3.jpg')}}" style="width: 1500px; height: 800px; position: relative; bottom: 20px;">--}}
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{asset('assets/images/bg1.jpg')}}" class="d-block w-100" alt="...">
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/images/bg2.jpg')}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/images/bg3.jpg')}}" class="d-block w-100" alt="...">
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row justify-content-center">
-        <form action="{{route('Base.search')}}" method="GET" class="menu_search_form" style="margin-top: 20px;">
-            <label style="font-size: 40px;color: tomato; font-family: 'Ultra', serif;" class="row justify-content-center">Find Your Building</label>
-            <div class="input-group">
-                <input type="text" name="builds"  class="search_input" placeholder="Search By Build Name or City" required="required" value="{{ old('builds') }}" style="width: 20cm;">
-                <button class="button" style="width: 40px; height: 40px;"><img src="{{asset('assets/images/search.png')}}" alt=""></button>
+            <div class="caption">
+                <form action="{{route('takers.search')}}" method="GET" class="menu_search_form" style="margin:0 auto;position: relative; bottom: 700px;">
+                    <label style="font-size: 40px;color: tomato; font-family: 'Ultra', serif;" class="row justify-content-center">Find Your Event</label>
+                    <input type="text" name="builds"  class="search_input" placeholder="Find Your Event By Name or Location" required="required" value="{{ old('builds') }}" style="width: 20cm;margin: 0 auto">
+                    <button class="button" style="width: 40px; height: 40px;"><img src="{{asset('assets/images/search.png')}}" alt=""></button>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 
     <div class="super_container_inner">
@@ -71,7 +41,10 @@
                                                 <div style="position: relative;">
                                                     <div class="product" ><a style="font-size: 30px;color: #fa8231;font-weight: bolder">{{$event->name}}</a><br>
                                                         <img src="{{asset('assets/images/location-point.png')}}" style="margin-right: 2px;"><a style="color: #7f8c8d;">{{$event->address}}, {{$event->city}}</a></div>
-                                                    <div class="product_name"><a style="font-size: 20px;font-weight: bolder">{{$event->date}} | {{$event->time}}</a></div></div>
+                                                    <a style="font-size: 20px;font-weight: bolder">
+                                                        <div><a style="color: #7f8c8d;">Event: {{$event->event_categories}}</a></div>
+                                                        <img src="{{asset('assets/images/date.png')}}" style="width: 15px; height: 15px;margin-bottom: 5px;margin-right: 5px;">{{ $event->date}}
+                                                           <div> <img src="{{asset('assets/images/clock.png')}}" style="width: 15px; height: 15px;margin-bottom: 5px;margin-right: 5px;">{{$event->time}}</a></div></div>
                                             </div>
                                         </div>
 

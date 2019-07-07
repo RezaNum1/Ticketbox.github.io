@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\EventOwners;
 use App\BookingTicket;
 use App\EventCategory;
+use DB;
+use Carbon\Carbon;
+
+
 
 class EventOwnerController extends Controller
 {
@@ -28,7 +33,8 @@ class EventOwnerController extends Controller
 
     public function create(Request $request){
         $datas = EventCategory::all();
-        return view('backend.owners.create', compact('datas'));
+        $citys = City::all();
+        return view('backend.owners.create', compact('datas', 'citys'));
     }
 
     public function store(Request $request){
@@ -170,4 +176,32 @@ class EventOwnerController extends Controller
 
         return redirect()->route('owners.bookingCode')->with('alert-success', "Success Get In");
     }
+
+
+    public function charts(){
+
+        $dates = Carbon::now()->format('d');
+        $lday = (($dates - 1));
+        $ldays = (($dates - 2));
+
+        $lmonth = Carbon::now();
+        $month = $lmonth->month;
+
+        $Now = BookingTicket::select('owner_id', Session::get('id'))
+            ->whereDay('created_at', $dates)->sum('quantity');
+
+        $lastday = BookingTicket::select('owner_id', Session::get('id'))
+                    ->whereDay('created_at', $lday)->sum('quantity');
+
+        $lastsday = BookingTicket::select('owner_id', Session::get('id'))
+            ->whereDay('created_at', $ldays)->sum('quantity');
+
+        $ThisMonth = BookingTicket::select('owner_id', Session::get('id'))
+            ->whereMonth('created_at', $month)->sum('total_price');
+
+
+        return view('backend.owners.chart', compact('Now', 'lastday', 'lastsday', 'ThisMonth'));
+    }
+
+
 }

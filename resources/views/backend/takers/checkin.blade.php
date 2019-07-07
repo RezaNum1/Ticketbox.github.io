@@ -66,7 +66,7 @@
                 <hr>
                 <div class="form-group">
                     <button type="button" class="btn btn-success submit-btn btn-block" data-toggle="modal" data-target="#Modal" >Check-In</button>
-                    <a class="btn btn-danger submit-btn btn-block" href="{{route('Base.index_home')}}">Cancle</a>
+                    <a class="btn btn-danger submit-btn btn-block" href="{{route('takers.index')}}">Cancle</a>
                 </div>
             </form>
 

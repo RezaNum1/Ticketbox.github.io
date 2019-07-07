@@ -113,4 +113,49 @@ class TakersController extends Controller
         }
     }
 
+    public function search(Request $request){
+        $data = $request->get('builds');
+
+        $builds = EventOwners::where('name', 'LIKE', "%$data%")
+            ->orWhere('event_categories', 'LIKE', "%$data%")
+            ->paginate(10);
+
+        return view('backend.index', compact('builds'));
+
+    }
+
+    public function concert(){
+        $events = EventOwners::where('event_categories', 'concert')->get();
+
+        return view('backend.takers.concert', compact('events'));
+    }
+
+    public function searchConcert(Request $request){
+        $data = $request->get('builds');
+
+        $events = EventOwners::where('name', 'LIKE', "%$data%")
+            ->orWhere('city', 'LIKE', "%$data%")
+            ->paginate(10);
+
+        return view('backend.takers.concert', compact('events'));
+
+    }
+
+    public function seminar(){
+        $events = EventOwners::where('event_categories', 'seminar')->get();
+
+        return view('backend.concert', compact('events'));
+    }
+
+    public function searchSeminar(Request $request){
+        $data = $request->get('builds');
+
+        $events = EventOwners::where('name', 'LIKE', "%$data%")
+            ->orWhere('city', 'LIKE', "%$data%")
+            ->paginate(10);
+
+        return view('backend.takers.concert', compact('events'));
+
+    }
+
 }

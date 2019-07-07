@@ -64,6 +64,11 @@
                                                 <input type="text" name="name_on_card" class="form-control" style="color: black">
                                             </div>
                                             <div class="form-group">
+                                                <img src="{{asset('assets/images/visa.png')}}" alt="" style="width: 40px; height: 40px">
+                                                <img src="{{asset('assets/images/mastercard.png')}}" alt="" style="width: 40px; height: 40px">
+                                                <img src="{{asset('assets/images/paypal.png')}}" alt="" style="width: 40px; height: 40px">
+                                            </div>
+                                            <div class="form-group">
                                                 <button class="btn btn-success submit-btn btn-block" type="submit">Register</button>
                                             </div>
                                         </form>

@@ -3,7 +3,7 @@
     <div class="super_container_inner">
         <div class="products">
             <div class="container">
-                <div class="row products_row products_container grid">
+
                     @if(Session::has('alert-success'))
                         <div class="alert alert-success mt-3">
                             {{ Session::get('alert-success') }}
@@ -12,6 +12,7 @@
                 <!-- Product -->
                     @forelse($events as $event)
                         @if($event->status == '4' || $event->status == '3')
+                                <div class="row products_row products_container grid">
                         <div class="col-sm-12 mb-3">
                             <div class="card">
                                 <div class="card-body">

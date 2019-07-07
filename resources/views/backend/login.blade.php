@@ -38,10 +38,10 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="{{route('auth.register_takers')}}" class="text-black text-small btn btn-lg btn-outline-primary">Register As Takers</a>
+                            <a href="{{route('auth.register_takers')}}" class="text-black text-small btn btn-lg btn-outline-primary">Register As Bookers</a>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <a href="{{route('auth.register_owner')}}" class="text-black text-small btn btn-lg btn-outline-dark">Register As Owner</a>
+                            <a href="{{route('auth.register_owner')}}" class="text-black text-small btn btn-lg btn-outline-dark">Register As Event Owner</a>
                         </div>
                     </div>
                 </div>

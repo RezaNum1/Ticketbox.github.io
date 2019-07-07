@@ -40,31 +40,35 @@
                 <div class="form-group">
                     <label class="label" for="description">Description</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Input Address" name="description" id="description">
+                        <input type="text" class="form-control" placeholder="Input Description..." name="description" id="description">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="label" for="price">Price</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Input Price" name="price" id="price" value="{{old('price')}}">
+                        <input type="text" class="form-control" placeholder="Input Price..." name="price" id="price" value="{{old('price')}}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="label" for="stock">Ticket Stock</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Input Stock" name="stock" id="stock" value="{{old('stock')}}">
+                        <input type="text" class="form-control" placeholder="Input Stock..." name="stock" id="stock" value="{{old('stock')}}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="label" for="address">Address</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Input Address" name="address" id="address">
+                        <input type="text" class="form-control" placeholder="Input Address..." name="address" id="address">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="label" for="city">City</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Description...." name="city" id="city">
+                        <select name="city" class="form-control">
+                            @foreach($citys as $city)
+                                <option value="{{$city->city_name}}">{{$city->city_name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                     <div class="form-group">

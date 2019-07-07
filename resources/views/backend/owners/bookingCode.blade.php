@@ -10,12 +10,8 @@
                 @endif
                 <form action="{{route('owners.findCode')}}" method="GET" class="menu_search_form" style="margin-top: 20px;">
                     <label style="font-size: 40px;color: tomato; font-family: 'Ultra', serif;" class="row justify-content-center">Find Booking Code</label>
-                    <div class="form-group-group">
                         <input type="text" name="findCode"  class="search_input" placeholder="Enter Booking Code...." required="required" value="{{ old('findCode') }}" style="width: 20cm;">
-                    </div>
-                    <div class="form-group">
                         <button class="button" style="width: 40px; height: 40px;"><img src="{{asset('assets/images/search.png')}}" alt=""></button>
-                    </div>
                 </form>
 
                 @if(isset($books))

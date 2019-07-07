@@ -24,10 +24,44 @@ class BasePageController extends Controller
         $data = $request->get('builds');
 
         $builds = EventOwners::where('name', 'LIKE', "%$data%")
-            ->orWhere('city', 'LIKE', "%$data%")
+            ->orWhere('event_categories', 'LIKE', "%$data%")
             ->paginate(10);
 
         return view('backend.index', compact('builds'));
+
+    }
+
+    public function concert(){
+        $builds = EventOwners::where('event_categories', 'concert')->get();
+
+        return view('backend.concert', compact('builds'));
+    }
+
+    public function searchConcert(Request $request){
+        $data = $request->get('builds');
+
+        $builds = EventOwners::where('name', 'LIKE', "%$data%")
+            ->orWhere('city', 'LIKE', "%$data%")
+            ->paginate(10);
+
+        return view('backend.concert', compact('builds'));
+
+    }
+
+    public function seminar(){
+        $builds = EventOwners::where('event_categories', 'seminar')->get();
+
+        return view('backend.concert', compact('builds'));
+    }
+
+    public function searchSeminar(Request $request){
+        $data = $request->get('builds');
+
+        $builds = EventOwners::where('name', 'LIKE', "%$data%")
+            ->orWhere('city', 'LIKE', "%$data%")
+            ->paginate(10);
+
+        return view('backend.concert', compact('builds'));
 
     }
 }

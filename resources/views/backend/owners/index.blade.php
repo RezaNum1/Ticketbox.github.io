@@ -85,19 +85,6 @@
                     </div>
                 @endforelse
 
-                <form action="{{route('owners.restore')}}" method="post" style="margin-left: 20px;">
-                    {{csrf_field()}}
-                    <div class="form-group">
-                        <label class="label" for="descripton">Restore</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Restore" name="restore" id="description">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-success submit-btn btn-block" type="submit">Restore</button>
-                    </div>
-                </form>
-
             </div>
         </div>
     </div>

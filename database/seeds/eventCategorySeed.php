@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\EventCategory;
-use App\CreditCard;
+use App\City;
 
 class eventCategorySeed extends Seeder
 {
@@ -13,13 +13,50 @@ class eventCategorySeed extends Seeder
      */
     public function run()
     {
-        $data = new EventCategory();
-        $data->name = 'Concert';
+        $data = new City();
+        $data->city_name = 'Jakarta';
         $data->save();
 
 
-        $data = new EventCategory();
-        $data->name = 'Seminar';
+        $data = new City();
+        $data->city_name = 'Bandung';
         $data->save();
+
+        $data = new City();
+        $data->city_name = 'Bogor';
+        $data->save();
+
+        $data = new City();
+        $data->city_name = 'Medan';
+        $data->save();
+
+        $data = new City();
+        $data->city_name = 'Palembang';
+        $data->save();
+
+        $data = new City();
+        $data->city_name = 'Yogyakarta';
+        $data->save();
+
+        $data = new City();
+        $data->city_name = 'Surabaya';
+        $data->save();
+
+        $data = new City();
+        $data->city_name = 'Malang';
+        $data->save();
+
+        $data = new City();
+        $data->city_name = 'Bekasi';
+        $data->save();
+
+        $data = new City();
+        $data->city_name = 'Tanggerang';
+        $data->save();
+
+        $data = new City();
+        $data->city_name = 'Banten';
+        $data->save();
+
     }
 }
