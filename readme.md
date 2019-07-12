@@ -1,13 +1,12 @@
 <p align="center"><img src="https://raw.githubusercontent.com/RezaNum1/ticketbox/master/public/assets/images/ticketbox1.png"></p>
 
-<p align="center">
+<h2 align="center" style="color:red">
 TICKET BOX
 </p>
 
 ## About TICKET BOX
 
-Ticket Box is a ticket selling base on website
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ticket Box is a website-based application that is useful for selling a concert ticket seminar or other event online, on this website there are 2 roles, namely the Event owner and Takers. Owners events can create and sell many event tickets in one account, at each event ticket there are a number of tickets provided by the event owner and that will be updated every time takers buy the ticket.
 
 ## Learning Laravel
 
