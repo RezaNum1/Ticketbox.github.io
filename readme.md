@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/RezaNum1/Ticketbox/blob/master/public/assets/images/ticketbox1.png"></p>
+<p align="center"><img src="https://github.com/RezaNum1/Ticketbox/issues/1"></p>
 
 <H2 align="center" style="color:red">
 TICKET BOX
