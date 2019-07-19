@@ -11,7 +11,7 @@ Ticket Box is a website-based application that is useful for selling a concert t
 <p text-weight:bold>TICKET BOX WEB</p><br>
 <br>
 <p align="center">
-<img src="https://github.com/RezaNum1/Ticketbox/blob/master/public/assets/images/ticket2.png"></p>
+<img src="https://user-images.githubusercontent.com/43489463/61541244-83246800-aa69-11e9-8fde-4d314412d51a.png"></p>
 
 <p style="font-weight:bold">Home ticket sales, in the picture there are 2 types of events namely concert and seminarary.</p>
 
